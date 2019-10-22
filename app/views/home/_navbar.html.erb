@@ -1,16 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">My Ozone</a>
+  <!-- <a class="navbar-brand" href="#">My Ozone</a> -->
+  <%= link_to "My Ozone", root_path %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-
-
     </ul>
+    <%= form_tag zipcode_path, :method => 'POST' do %>
+      <div  class="form-inline my-2 my-lg-0">
+      <%= text_field_tag 'zipcode', nil, placeholder: "Search Zipcode",class: "form-control mr-sm-2" %>
+      <%= submit_tag 'Search', class: "btn btn-outline-secondary my-2 my-sm-0" %>
+
+    <% end %>
+   </div>
   </div>
 </nav>
